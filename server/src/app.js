@@ -15,9 +15,9 @@ app.use(express.urlencoded({ extended: false }));
   }));
   // Img
   app.use(fileUpload({
-    useTempFiles: true, // Archivos temporales
-    tempFileDir: './uploads' // Ruta de los temp
-  }));
+  useTempFiles: true, // Archivos temporales
+  tempFileDir: './temp' // Ruta de los temp
+}));
 
 // Routes
 app.use(photoRoutes);

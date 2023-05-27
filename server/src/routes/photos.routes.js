@@ -5,10 +5,10 @@ import * as s3 from "../s3.js"; // AWS s3
 
 // Read
 router.get('/', (req, res) => {
-  res.send("Hola mundo");
+  res.send("Backend");
 });
 
-// Create
+// Create - Subir a S3
 router.post('/upload', async (req, res) => {
   try {
     console.log("Estas intentado subir una imagen: ")
@@ -24,7 +24,7 @@ router.post('/upload', async (req, res) => {
   }
 });
 
-// Read by Name
+// Read by Name - Descargar
 router.get('/imagen/:name', async (req, res) => {
   
   try {

@@ -13,7 +13,7 @@ export const readObjectS3 = async (files) => {
     // Parametros
     const readParams = {
       Bucket: env.bucket_name, 
-      Key: files // Nombre del objeto en S3 
+      Key: files // Nombre del objeto/imagen en S3 
     };
     // Read
     const resultsRead = await s3Client.send(new GetObjectCommand(readParams));
@@ -36,6 +36,7 @@ export const createObjectS3 = async (files) => {
   // Create - Guardar un objeto / imagenes
   try {
 
+    // Sube los archivos ubicados en la ruta temporal
     const createStreamed = fs.createReadStream(files.tempFilePath);
 
     const createParams = {
@@ -62,5 +63,3 @@ export const createObjectS3 = async (files) => {
   }
 
 };
-
-// Delete Object
